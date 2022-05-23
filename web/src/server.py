@@ -20,7 +20,7 @@ def get_home(req):
 
   return render_to_response('templates/home.html', {'users': records}, request=req)
   
-def get_product(req):
+def get_info(req):
   # Connect to the database and retrieve the users
   db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
   cursor = db.cursor()
@@ -28,39 +28,8 @@ def get_product(req):
   records = cursor.fetchall()
   db.close()
 
-  return render_to_response('templates/product.html', {'users': records}, request=req)
+  return render_to_response('templates/info.html', {'users': records}, request=req)
   
-def get_kvp(req):
-  db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
-  cursor = db.cursor()
-  cursor.execute("select first_name, last_name, email from Users;")
-  records = cursor.fetchall()
-  db.close()
-
-  return render_to_response('templates/kvp.html', {'users': records}, request=req)
-
-def get_part1(req):
-  db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
-  cursor = db.cursor()
-  cursor.execute("select first_name, last_name, email from Users;")
-  records = cursor.fetchall()
-  db.close()
-
-  return render_to_response('templates/part1.html', {'users': records}, request=req)
-
-def get_part2(req):
-  db = mysql.connect(host=db_host, database=db_name, user=db_user, passwd=db_pass)
-  cursor = db.cursor()
-  cursor.execute("select first_name, last_name, email from Users;")
-  records = cursor.fetchall()
-  db.close()
-
-  return render_to_response('templates/part2.html', {'users': records}, request=req)
-
-  
-  
-
-
 
 ''' Route Configurations '''
 if __name__ == '__main__':
@@ -73,19 +42,10 @@ if __name__ == '__main__':
   config.add_view(get_home, route_name='get_home')
   
   
-  config.add_route('get_product', '/home')
+  config.add_route('get_info', '/info')
   config.add_view(get_product, route_name='get_product')
   
-  config.add_route('get_kvp', '/kvp')
-  config.add_view(get_kvp, route_name='get_kvp')
   
-  config.add_route('get_part1', '/part1')
-  config.add_view(get_part1, route_name='get_part1')
-  
-  config.add_route('get_part2', '/part2')
-  config.add_view(get_part2, route_name='get_part2')
-
-
 
 
 
