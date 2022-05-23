@@ -1,0 +1,240 @@
+body {
+  padding: 1rem;
+  font-family: sans-serif;
+  font-size: 16pt;
+  box-sizing: bodrder-box;
+  background-image: url('img.jpeg');
+}
+.separator {
+  font-size: calc(1rem + 1vw);
+  color: var(--accent-color);
+  display: flex;
+  text-transform: uppercase;
+  align-items: center;
+  text-align: center;
+  margin: calc(2rem + 3vw) auto;
+}
+.separator::before,
+.separator::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid var(--dark-color);
+}
+.separator::before {
+  margin-right: 1rem;
+}
+.separator::after {
+  margin-left: 1rem;
+}
+.centered {
+  text-align: center;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.hero {
+  text-align: center;
+  color: #3d423c;
+}
+aside {
+  margin: 0rem;
+  padding: 1rem;
+}
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+@media screen and (min-width: 2000px) {
+  section {
+    display: flex;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 2fr;
+  }
+}
+.container {
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.member-names {
+  font-size: 1.2rem;
+  transition: all 1s ease;
+}
+.question:hover {
+  transition: all 0.5s ease;
+  font-size: 2rem;
+}
+.member-names:hover {
+  background: #475e59;
+  cursor: pointer;
+  padding: 1rem;
+  font-size: 2rem;
+  color: #32e65f;
+}
+
+.filler {
+  flex: 1 1 auto;
+}
+
+:root {
+  --primary-color: #07f;
+  --accent-color: rgba(231, 109, 90, 1);
+  --accent-color-dark: rgba(226, 77, 54, 1);
+  --accent-color: #39b859;
+  --accent-color-dark: #133d1e;
+  --dark-color: rgba(104, 109, 115, 1);
+  --dark-color-alt: rgba(156, 160, 165, 1);
+  --medium-color: #bbb;
+  --light-color: #eee;
+  --page-color: #532828;
+  --soft-color: rgba(221, 214, 212, 1);
+  --margin-xxl: 3rem;
+  --margin-xl: 2rem;
+  --margin-lg: 1rem;
+  --margin-med: 0.66rem;
+  --margin-sm: 0.33rem;
+  --base-font-size: 16pt;
+  --border-radius: 6px;
+  --rounded-radius: 4rem;
+  --padding-xxl: 2rem;
+  --padding-xl: 1.4rem;
+  --padding-lg: 1rem;
+  --padding-med: 0.66rem;
+  --padding-sm: 0.33rem;
+  --font: Lato;
+}
+
+/* -- GRID -- */
+
+/* -- UTILITY */
+
+.btn {
+  border: 1px solid var(--accent-color);
+  display: inline-flex;
+  font-size: calc(1rem + 0.6vw);
+  cursor: pointer;
+  padding: var(--padding-med) var(--padding-lg);
+  border-radius: var(--border-radius);
+  background: var(--accent-color);
+  color: white;
+  user-select: none;
+  margin: 0px 0.25rem 0.75rem 0px;
+}
+.btn:hover {
+  background: var(--accent-color-dark);
+}
+.btn.small {
+  font-size: calc(0.5rem + 0.5vw);
+  padding: 0.4rem 0.8rem;
+}
+.btn.large {
+  font-size: calc(1.2rem + 1.4vw);
+  padding: var(--padding-lg) var(--padding-xxl);
+}
+.btn.outline {
+  background: rgba(240, 239, 234, 1);
+  border: 1px solid var(--dark-color);
+  color: #333;
+}
+.btn.primary {
+  background: var(--accent-color);
+  color: white;
+}
+.btn.warning {
+  background: var(--warning-color);
+  color: white;
+}
+.btn-grid {
+  display: flex;
+  margin-bottom: 5px;
+}
+.btn.pill {
+  border-radius: var(--rounded-radius);
+}
+
+/* ------------ select ----- */
+
+/* checkboxes and radio buttons... */
+.control {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.control input {
+  /* hide the HTML control */
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.control__indicator {
+  position: absolute;
+  top: 6px;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background: #e6e6e6;
+  background: var(--soft-color);
+}
+
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+  background: var(--soft-color);
+}
+.control input:checked ~ .control__indicator {
+  background: var(--accent-color);
+}
+.control:hover input:not([disabled]):checked ~ .control__indicator,
+.control input:checked:focus ~ .control__indicator {
+}
+.control input:disabled ~ .control__indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.control__indicator:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.control input:checked ~ .control__indicator:after {
+  display: block;
+}
+.control--checkbox .control__indicator:after {
+  left: 8px;
+  top: 5px;
+  width: 3px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.control--checkbox input:disabled ~ .control__indicator:after {
+  border-color: var(--dark-color);
+}
+.control--radio .control__indicator:after {
+  left: 7px;
+  top: 7px;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background: #fff;
+}
+.control--radio input:disabled ~ .control__indicator:after {
+  background: #7b7b7b;
+}
+
