@@ -43,7 +43,7 @@ if __name__ == '__main__':
   
   
   config.add_route('get_info', '/info')
-  config.add_view(get_product, route_name='get_product')
+  config.add_view(get_info, route_name='get_info')
   
   
 
