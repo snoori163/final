@@ -18,7 +18,7 @@ h1{
  
 h2{
     color: lightyellow;
-    font-size: 2rem;
+    font-size: 1.6rem;
     text-align: center;
 }
 #container{
@@ -37,9 +37,20 @@ h2{
     font-size: 1.6rem;
     border-radius: 12px;
 }
+#container1 div{
+    align-items: left;
+    margin: 1rem;
+    padding: 1rem;
+    width: 100%;
+    text-align: right;
+    color: lightyellow;
+    font-size: 1.6rem;
+    border-radius: 12px;
+}
+
 table {
   border-collapse: collapse;
-  width: 70%;
+  width: 80%;
   font-size: 1.3rem;
   font-weight: none;
 }
@@ -54,16 +65,49 @@ caption{
     color: white;
     font-weight: bold;
 }
+.pf{
+        font-size: 1.5rem;
+        color: white;
+        font-weight: bold;
+}
 textarea{
     width: 50%;
     color: #FFF;
-    background: transparent;
+    background: lightblue;
     border: none;
     outline: none;
     font-size: 1.3rem;
-    text-align: center;
+    text-align: right;
     
 }
+.button{
+    border-radius: 12px;
+    width: 20%;
+    height: 10%;
+    transition-duration: 0.4s;
+}
+.button:hover {
+  background-color: navy; /* Green */
+  color: white;
+}
+.button1{
+    border-radius: 12px;
+    width: 40%;
+    height: 10%;
+    transition-duration: 0.4s;
+    text-align: center;
+    font-size: 1rem;
+    background-color: lightblue;
+}
+#circle {
+    background: grey;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    place-items: center;
+    color: navy;
+}
+
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
